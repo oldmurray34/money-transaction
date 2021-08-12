@@ -1,14 +1,19 @@
-import kotlin.math.roundToInt
-
 fun main() {
-    val initialAmount: Int = 100000
-    val cardTransactionRates: Double = 0.0075
-    val minimumTransaction: Int = 3500
+    val initialAmount= 10000000
+    val cardType = "Maestro"
+    val previousTransactionsThisMonth= 1000
 
-    if (initialAmount > minimumTransaction) {
-        var amount = initialAmount - (initialAmount * cardTransactionRates)
-        println("Перевод на сумму ${amount.roundToInt()} копеек совершен")
+    if (transactionRatesCalc(cardType, previousTransactionsThisMonth, initialAmount) == -1) {
+        println("Вы превысили лимит транзакции")
     } else {
-        println("Сумма перевода должна быть больше 35 рублей")
+        println(
+            "Перевод на сумму ${
+                transactionRatesCalc(
+                    cardType,
+                    previousTransactionsThisMonth,
+                    initialAmount
+                )
+            } совершен"
+        )
     }
 }
