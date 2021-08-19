@@ -241,6 +241,6 @@ class TransactionKtTest {
             initialAmount = initialAmount
         )
 
-        assertEquals(74000, result)
+        assertEquals(740000, result)
     }
 }
